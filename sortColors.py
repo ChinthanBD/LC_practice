@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/sort-colors/
-# Dutch national flag problem   
 from typing import List
+
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
