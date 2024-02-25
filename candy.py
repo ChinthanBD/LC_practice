@@ -2,6 +2,7 @@
 from typing import List
 class Solution:
     def candy(self, ratings: List[int]) -> int:
+        # create a sorted tuple of each child's rating and index/position where the child is in
         data = sorted((x,i) for i,x in enumerate(ratings))
 
         candy = [1] * len(ratings)

@@ -5,14 +5,14 @@ class RandomizedSet:
 
     def __init__(self):
         self.hashMap = {}
-        self.list = []
+        self.lst = []
         
 
     def insert(self, val: int) -> bool:
         res = val not in self.hashMap
         if res:
-            self.hashMap[val] = len(self.list)
-            self.list.append(val)
+            self.hashMap[val] = len(self.lst)
+            self.lst.append(val)
         return res
         
 
@@ -20,16 +20,16 @@ class RandomizedSet:
         res = val in self.hashMap
         if res:
             idx = self.hashMap[val]
-            lastVal = self.list[-1]
-            self.list[idx] = lastVal
-            self.list.pop()
+            lastVal = self.lst[-1]
+            self.lst[idx] = lastVal
+            self.lst.pop()
             self.hashMap[lastVal] = idx
             del self.hashMap[val]
         return res
         
 
     def getRandom(self) -> int:
-        return random.choice(self.list)
+        return random.choice(self.lst)
         
 
 

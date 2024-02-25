@@ -8,6 +8,7 @@ class Solution:
                 l +=1
             r+=1
 
-        if l<len(s):
-            return False
-        return True
+        return l == len(s)
+        # if l<len(s):
+        #     return False
+        # return True

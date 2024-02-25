@@ -6,7 +6,7 @@ class Solution:
         res_set = set(nums)
         res = list(res_set)
         res.sort()
-        nums[:] = res
+        nums[:] = res # not used 'nums = res' because it just points nums to res(local reference) and not modify the actual nums array outside the function
         return len(res)
         ########################
         # i = 0
