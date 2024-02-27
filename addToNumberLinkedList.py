@@ -23,8 +23,6 @@ class Solution:
             newNode = ListNode(sum%10)
             currentNode.next = newNode
             currentNode = newNode
-        # if carry:
-        #     currentNode.next = newNode(carry)
         return dummyNode.next
             
 
