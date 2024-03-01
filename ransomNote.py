@@ -10,7 +10,7 @@ class Solution:
                 return False
         return True
 
-# Not my code below
+# Not my code below :(
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         for c in ransomNote:
