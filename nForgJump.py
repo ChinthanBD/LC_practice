@@ -9,7 +9,6 @@ from typing import *
   
 def frogJump(n: int, heights: List[int]) -> int:
     dp = [None] * n
-    # memoization
     def func(step, dp, heights):
         if step == 0:
             return 0
