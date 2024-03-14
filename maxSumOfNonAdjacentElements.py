@@ -6,6 +6,7 @@ from math import *
 
 from sys import stdin
 
+###########################TLE for below approach###################
 def maximumNonAdjacentSum(nums):    
     # Write your code here.
 	def get_max_sum(n):
@@ -21,7 +22,7 @@ def maximumNonAdjacentSum(nums):
 		
 	return get_max_sum(n-1)
 
-###########################TLE for above###################
+
 ###########################memoization solutionbelow#######
 
 
