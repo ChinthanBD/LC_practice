@@ -32,6 +32,6 @@ class Solution:
                         queue.append((neighnouri, neighnourj, t + 1))  # Increment time by 1 for the next level of rotten oranges
                         visited.add((neighnouri, neighnourj))  # Mark as visited
                         time = max(time, t + 1)  # Update the maximum time
-        if self.findFreshCount(m, n, grid):  # If there are still fresh oranges left
+        if self.findFreshCount(m, n, grid):  # If there are still fresh oranges left after updation
             return -1
         return time
