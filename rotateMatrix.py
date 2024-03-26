@@ -19,4 +19,21 @@ class Solution:
             for j in range(n):  
                 matrix[i][j] = res[i][j]
                 
-### Above is using extra array, Not so good :(                 
+### Above is using extra array, Not so good :( 
+
+from typing import List
+class Solution:
+    def rotate(self, matrix: List[List[int]]) -> None:
+        """
+        Do not return anything, modify matrix in-place instead.
+        """
+        m = len(matrix)
+        n = len(matrix[0])
+
+        for i in range(m-1):
+            for j in range(i+1, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+        # reversing each row of the matrix
+        for i in range(n):
+            matrix[i].reverse()
+                            
