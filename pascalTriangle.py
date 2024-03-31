@@ -37,3 +37,27 @@ class Solution:
     #        numerator *= n - i
     #        denominator *= i + 1
     #    return numerator // denominator
+
+
+#############################
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        res = [[1]]
+        if numRows == 1:
+            return res
+        
+        for i in range(1, numRows):
+            row = []
+            for j in range(i+1):
+                left = 0 
+                right = 0
+                if j-1>=0:
+                    left = res[i-1][j-1]
+                if j < len(res[i - 1]):
+                    right = res[i-1][j]
+                val = left + right
+                row.append(val)
+            res.append(row)
+        
+        return res
+
