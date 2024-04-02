@@ -1,4 +1,5 @@
 # https://leetcode.com/problems/happy-number/description/?envType=study-plan-v2&envId=top-interview-150
+
 class Solution:
     def isHappy(self, n: int) -> bool:
         mpp = set()
@@ -15,3 +16,4 @@ class Solution:
             mpp.add(square_sum)
             n = square_sum
         return False
+    
