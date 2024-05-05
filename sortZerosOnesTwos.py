@@ -1,5 +1,8 @@
 # https://leetcode.com/problems/sort-colors/
 # Dutch national flag problem   
+# 0 - (Low-1) ---> 0
+# low - (mid-1) ---> 1
+# high+1 - n-1 ---> 2
 from typing import List
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
