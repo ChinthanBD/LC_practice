@@ -26,7 +26,7 @@ class Solution:
         # return image
     
     ################################
-        #dfs Solution
+        #dfs Solution for flood fill
         m = len(image)
         n = len(image[0])
         startColor = image[sr][sc]  # Store the color of the starting pixel
