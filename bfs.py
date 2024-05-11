@@ -5,9 +5,9 @@ class Solution:
     #Function to return Breadth First Traversal of given graph.
     def bfsOfGraph(self, V: int, adj: List[List[int]]) -> List[int]:
         # code here
-        queue = deque([])
-        visited = set()
-        traversal = []
+        queue = deque([]) # to store the nodes to acheive bfs
+        visited = set() # maintain the nodes which are already visited
+        traversal = [] # list to maintain traversal
         queue.append(0)
         while queue:
             vertex = queue.popleft()
