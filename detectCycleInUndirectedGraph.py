@@ -34,4 +34,32 @@ class Solution:
                     return True
                 
         return False
-			
+
+
+	#####################
+    #######  dfs implementation
+	    
+    def isCycle(self, V: int, adj: List[List[int]]) -> bool:
+        # Set to keep track of visited nodes
+        visited = set()
+
+        def dfs(node, parent):
+            visited.add(node)
+            
+            for neighbour in adj[node]:
+                if neighbour not in visited:
+                    if dfs(neighbour, node):
+                        return True
+                elif neighbour != parent:
+                    return True
+                    
+            return False
+
+        # Iterate over all vertices to handle disconnected graphs
+        for i in range(V):
+            if i not in visited:
+                if dfs(i, -1):
+                    return True
+                
+        return False
+	        
