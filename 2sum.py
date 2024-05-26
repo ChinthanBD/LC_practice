@@ -18,3 +18,15 @@ class Solution:
                 right -= 1
 
         return []  # No solution found
+
+
+###############
+    # O(n) solution
+        mpp = {}
+        for i,n in enumerate(nums):
+            diff = target - n
+            if diff in mpp:
+                return [mpp[diff],i]
+            mpp[n] = i
+        
+        return
