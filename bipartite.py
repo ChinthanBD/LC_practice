@@ -33,3 +33,28 @@ class Solution:
                     return False
         
         return True
+    
+##################################### 
+
+
+class Solution:
+    def isBipartite(self, V, adj):
+        visited = set()
+        color = {}
+        def dfs(node,c):
+            color[node] = c
+            visited.add(node)
+            for neighbour in adj[node]:
+                if neighbour not in visited:
+                    if not dfs(neighbour, 1 - color[node]):
+                        return False
+                elif color[neighbour] == color[node]:
+                        return False
+            return True
+
+        for i in range(V):
+            if i not in visited:
+                if not dfs(i,0):
+                    return False
+                
+        return True
