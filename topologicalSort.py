@@ -46,7 +46,7 @@ class Solution:
         # Enqueue all vertices with in-degree 0
         for node, incoming_nodes in indegree.items():
             if incoming_nodes == 0:
-                q.append(node)
+                q.append(node) 
         
         # Process the vertices in the queue
         while q:
