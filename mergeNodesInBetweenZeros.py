@@ -1,10 +1,13 @@
 
 # https://leetcode.com/problems/merge-nodes-in-between-zeros/submissions/1310364058/?envType=daily-question&envId=2024-07-04
 # # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+from typing import Optional
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+        
 class Solution:
     def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode(0)  # Create a dummy node to act as the new head
