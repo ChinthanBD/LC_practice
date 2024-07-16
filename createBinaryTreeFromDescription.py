@@ -13,17 +13,17 @@ class Solution:
     def createBinaryTree(self, descriptions: List[List[int]]) -> Optional[TreeNode]:
         nodes = {}
         children = set()
-        for parent, child, is_left in descriptions:
-            if parent not in nodes:
-                nodes[parent] = TreeNode(parent)
-            if child not in nodes:
-                nodes[child] = TreeNode(child)
+        for parent_val, child_val, is_left in descriptions:
+            if parent_val not in nodes:
+                nodes[parent_val] = TreeNode(parent_val)
+            if child_val not in nodes:
+                nodes[child_val] = TreeNode(child_val)
             if is_left ==1:
-                nodes[parent].left =nodes[child]
+                nodes[parent_val].left =nodes[child_val]
             else:
-                nodes[parent].right =nodes[child]
+                nodes[parent_val].right =nodes[child_val]
 
-            children.add(child)
+            children.add(child_val)
 
         root = None
 
