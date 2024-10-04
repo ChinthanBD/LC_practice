@@ -17,4 +17,4 @@ class Solution:
                 for neighbour in adj[vertex]:
                     if neighbour not in visited:
                         queue.append(neighbour)
-        return traversal    
+        return traversal    # return bfs traversal of the graph
