@@ -2,7 +2,7 @@
 # pre-compute
 class Solution:
     def climbStairs(self, n: int) -> int:
-        dp = [0] * (n + 1)
+        dp = [0] * (n + 1) # initialize dp array to store the values at each stairs
         dp[0] = dp[1] = 1
 
         # Calculate the number of distinct ways for each step using dynamic programming
