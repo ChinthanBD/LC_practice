@@ -31,3 +31,31 @@ class Solution:
                 left += 1  # Move the left boundary right
         
         return res  # Return the list of elements in spiral order
+
+
+
+############################################## Destructive approach########################
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        res = []
+        if not matrix:
+            return []
+
+        while matrix:
+
+            res += matrix.pop(0)
+
+            if matrix and matrix[0]:
+                for row in matrix:
+                    if row:
+                        res.append(row.pop())
+                
+            if matrix:
+                res+=matrix.pop()[::-1]
+            
+            if matrix:
+                for row in matrix[::-1]:
+                    if row:
+                        res.append(row.pop(0))
+            
+        return res
