@@ -1,30 +1,33 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        if not matrix:
-            return []
-
-        rows, cols = len(matrix), len(matrix[0])
-        top, bottom, left, right = 0, rows, 0, cols
-        result = []
+        # Initialize the boundaries of the matrix
+        left, right = 0, len(matrix[0]) - 1  # Left and right boundaries for columns
+        top, bottom = 0, len(matrix) - 1     # Top and bottom boundaries for rows
         
-        while left < right and top < bottom:
-            for i in range(left, right):
-                result.append(matrix[top][i])
-            top += 1
-            
-            for i in range(top, bottom):
-                result.append(matrix[i][right-1])
-            right -= 1
-            
-            if not (left < right and top < bottom):
-                break
-
-            for i in range(right-1, left - 1, -1):
-                result.append(matrix[bottom-1][i])
-            bottom -= 1
-            
-            for i in range(bottom-1, top - 1, -1):
-                result.append(matrix[i][left])
-            left += 1
+        res = []  # List to store the result in spiral order
         
-        return result
+        # Continue looping until the boundaries meet or overlap
+        while left <= right and top <= bottom:
+            # Traverse from left to right along the top row
+            for i in range(left, right + 1):
+                res.append(matrix[top][i])
+            top += 1  # Move the top boundary down
+
+            # Traverse from top to bottom along the right column
+            for i in range(top, bottom + 1):
+                res.append(matrix[i][right])
+            right -= 1  # Move the right boundary left
+
+            # Check if there are rows remaining to traverse from right to left
+            if top <= bottom:
+                for i in range(right, left - 1, -1):
+                    res.append(matrix[bottom][i])
+                bottom -= 1  # Move the bottom boundary up
+
+            # Check if there are columns remaining to traverse from bottom to top
+            if left <= right:
+                for i in range(bottom, top - 1, -1):
+                    res.append(matrix[i][left])
+                left += 1  # Move the left boundary right
+        
+        return res  # Return the list of elements in spiral order
