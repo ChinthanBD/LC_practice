@@ -12,3 +12,16 @@ class Solution:
             mpp[num] = i
 
         return False
+
+
+# https://leetcode.com/problems/contains-duplicate-ii/
+class Solution:
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        lookup_dict={}
+        for i in range(len(nums)):
+            if nums[i] in lookup_dict and abs(lookup_dict[nums[i]] - i)<=k:
+                return True
+            
+            lookup_dict[nums[i]] = i
+        
+        return False
