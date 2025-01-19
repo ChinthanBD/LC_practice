@@ -14,13 +14,6 @@ class Solution:
         while tmp:
             helper.append(tmp.val)
             tmp =tmp.next
+        
+        return helper == helper[::-1]
 
-        
-        tmp = head
-        
-        for i in range(len(helper)-1, -1, -1):
-            if helper[i] != tmp.val:
-                return False
-            tmp = tmp.next
-        
-        return True
